@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package bankmangementsystem;
+package bankmanagementsystem;
 
 import javax.swing.*;
 import java.awt.*; //for image
@@ -13,7 +13,7 @@ import java.awt.event.*; // for ActionListener(interface)so that we can perform 
  * @author pawan
  */
  
-public class BankMangementSystem extends JFrame implements ActionListener{
+public class BankManagementSystem extends JFrame implements ActionListener{
     /**
      * @param args the command line arguments
      * 
@@ -22,7 +22,7 @@ public class BankMangementSystem extends JFrame implements ActionListener{
     private final JTextField cardTextField;
     private final JPasswordField pinTextField;
 
-    BankMangementSystem(){ //Constructor
+    BankManagementSystem(){ //Constructor
         setTitle("Bank Management System");
         
         setLayout(null);
@@ -110,6 +110,6 @@ public class BankMangementSystem extends JFrame implements ActionListener{
     
     public static void main(String[] args){
      // TODO code application logic here
-        new BankMangementSystem();
+        new BankManagementSystem();
     }
 }
