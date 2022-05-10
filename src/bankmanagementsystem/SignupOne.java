@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package bankmangementsystem;
+package bankmanagementsystem;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,11 +15,11 @@ import java.awt.event.*;
  */
 
 public class SignupOne extends JFrame implements ActionListener{
-  long random;
-  JTextField nameTextField, fnameTextField, emailTextField, addressTextField, cityTextField, stateTextField, pinTextField;
-  JButton button;
-  JRadioButton male, female, other, married, unmarried;
-  JDateChooser dateChoser;
+  private final long random;
+  private final JTextField nameTextField, fnameTextField, emailTextField, addressTextField, cityTextField, stateTextField, pinTextField;
+  private final JButton button;
+  private final JRadioButton male, female, other, married, unmarried;
+  private final JDateChooser dateChoser;
   //Constructor
   SignupOne(){
       setLayout(null);
@@ -27,10 +27,10 @@ public class SignupOne extends JFrame implements ActionListener{
       Random rand = new Random();
       random = Math.abs((rand.nextLong() % 9000L) + 1000L);
       
-      JLabel formNo = new JLabel("APPLICATION FORM NO. "+ random);
-      formNo.setFont(new Font("Abyssinica SIL", Font.BOLD, 38));
-      formNo.setBounds(140, 20, 600, 40);
-      add(formNo);
+      JLabel formno = new JLabel("APPLICATION FORM NO. "+ random);
+      formno.setFont(new Font("Abyssinica SIL", Font.BOLD, 38));
+      formno.setBounds(140, 20, 600, 40);
+      add(formno);
       
       JLabel personalDetails = new JLabel("Page 1: Personal Details");
       personalDetails.setFont(new Font("Abyssinica SIL", Font.BOLD, 22));
@@ -180,7 +180,7 @@ public class SignupOne extends JFrame implements ActionListener{
   }
     
   public void actionPerformed(ActionEvent ae){
-      String formNo = "" + random; //form is in long value
+      String formno = "" + random; //form is in long value
       String name = nameTextField.getText(); //find the val of nameTextField
       String fname = fnameTextField.getText();
       String dob = ((JTextField) dateChoser.getDateEditor().getUiComponent()).getText();
@@ -211,8 +211,8 @@ public class SignupOne extends JFrame implements ActionListener{
           }
           else{
             DatabaseConnection conn = new DatabaseConnection();
-            String query = "insert into signup values('"+formNo+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"',)";
-            conn.statement.executeUpdate(query);
+            String query = "insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')";
+            conn.stmt.executeUpdate(query);
           }
       }catch(Exception e){
           System.out.println(e);
