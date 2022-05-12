@@ -7,6 +7,7 @@ package bankmanagementsystem;
 import javax.swing.*;
 import java.awt.*; //for image
 import java.awt.event.*; // for ActionListener(interface)so that we can perform action on buttons 
+import java.sql.ResultSet;
 
 /**
  *
@@ -52,7 +53,7 @@ public class BankManagementSystem extends JFrame implements ActionListener{
         
         cardTextField = new JTextField();
         cardTextField.setBounds(300, 150, 230, 30);
-        cardTextField.setFont(new Font("Arial", Font.BOLD, 14));
+        cardTextField.setFont(new Font("Abyssinica SIL", Font.BOLD, 14));
         add(cardTextField);
         
         JLabel pin = new JLabel("PIN:");
@@ -62,7 +63,7 @@ public class BankManagementSystem extends JFrame implements ActionListener{
         
         pinTextField = new JPasswordField();
         pinTextField.setBounds(300, 220, 230, 30);
-        pinTextField.setFont(new Font("Arial", Font.BOLD, 14));
+        pinTextField.setFont(new Font("Abyssinica SIL", Font.BOLD, 14));
         add(pinTextField);
         
         login = new JButton("SIGN IN");
@@ -91,9 +92,9 @@ public class BankManagementSystem extends JFrame implements ActionListener{
         
         // to make frame use setSize() function
         setSize(800, 480);
-        setVisible(true); //set visibility so that user can see frame
         setLocation(350, 200); //by default every frame opens with top corner to change the 
         //location we use this function 
+        setVisible(true); //set visibility so that user can see frame
     }
     
     // tells after click on button what actions are performed
@@ -102,7 +103,22 @@ public class BankManagementSystem extends JFrame implements ActionListener{
             cardTextField.setText("");
             pinTextField.setText("");
         }else if(ae.getSource() == login){
-            
+            DatabaseConnection conn = new DatabaseConnection();
+            String cardNumber = cardTextField.getText();
+            String pinNumber = pinTextField.getText();
+            String Query = "select * from login where cardNo = '"+cardNumber+"' and pinNo = '"+pinNumber+"'";
+            try {
+                ResultSet result = conn.stmt.executeQuery(Query);
+                if(result.next()){
+                    setVisible(false);
+                    new Transactions(pinNumber).setVisible(true);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Incorrect Card Number or Pin");
+                }
+            } catch (Exception e) {
+                //TODO: handle exception
+                System.err.println(e);
+            }
         }else if(ae.getSource() == signup){
             setVisible(false); // used to close Home Tan and open Signup page
             new SignupOne().setVisible(true); //o object of signup page1 
