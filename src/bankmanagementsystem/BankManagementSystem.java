@@ -10,7 +10,7 @@ import java.awt.event.*; // for ActionListener(interface)so that we can perform 
 
 /**
  *
- * @author pawan
+ * @author notyourpawan
  */
  
 public class BankManagementSystem extends JFrame implements ActionListener{
@@ -104,7 +104,8 @@ public class BankManagementSystem extends JFrame implements ActionListener{
         }else if(ae.getSource() == login){
             
         }else if(ae.getSource() == signup){
-            
+            setVisible(false); // used to close Home Tan and open Signup page
+            new SignupOne().setVisible(true); //o object of signup page1 
         }
     }
     
