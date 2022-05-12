@@ -15,11 +15,11 @@ import java.awt.event.*;
  */
 
 public class SignupOne extends JFrame implements ActionListener{
-  private final long random;
-  private final JTextField nameTextField, fnameTextField, emailTextField, addressTextField, cityTextField, stateTextField, pinTextField;
-  private final JButton button;
-  private final JRadioButton male, female, other, married, unmarried;
-  private final JDateChooser dateChoser;
+  public long random;
+  public JTextField nameTextField, fnameTextField, emailTextField, addressTextField, cityTextField, stateTextField, pinTextField;
+  public JButton button;
+  public JRadioButton male, female, other, married, unmarried;
+  JDateChooser dateChoser;
   //Constructor
   SignupOne(){
       setLayout(null);
@@ -180,7 +180,7 @@ public class SignupOne extends JFrame implements ActionListener{
   }
     
   public void actionPerformed(ActionEvent ae){
-      String formno = "" + random; //form is in long value
+      String formNo = "" + random; //form is in long value
       String name = nameTextField.getText(); //find the val of nameTextField
       String fname = fnameTextField.getText();
       String dob = ((JTextField) dateChoser.getDateEditor().getUiComponent()).getText();
@@ -211,8 +211,10 @@ public class SignupOne extends JFrame implements ActionListener{
           }
           else{
             DatabaseConnection conn = new DatabaseConnection();
-            String query = "insert into signup values('"+formno+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')";
+            String query = "insert into signup values('"+formNo+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')";
             conn.stmt.executeUpdate(query);
+            setVisible(false);
+            new SignupTwo(formNo).setVisible(true);
           }
       }catch(Exception exception){
           System.out.println(exception);
