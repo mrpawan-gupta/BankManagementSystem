@@ -195,6 +195,11 @@ public class SignupTwo extends JFrame implements ActionListener{
              DatabaseConnection conn = new DatabaseConnection();
             String query = "insert into signupTwo values('"+formNo+"', '"+reli+"', '"+cat+"', '"+sal+"', '"+educ+"', '"+occu+"', '"+seniorcitizen+"', '"+exisitingaccount+"', '"+span+"', '"+saadhar+"')";
             conn.stmt.executeUpdate(query);
+
+            setVisible(false);
+
+            // object of class SignupThree
+            new SignupThree(formNo).setVisible(true);
       }catch(Exception e){
           System.out.println(e);
       }
