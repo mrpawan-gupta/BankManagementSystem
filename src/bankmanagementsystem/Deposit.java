@@ -7,6 +7,7 @@ package bankmanagementsystem;
 import javax.swing.*;
 import java.awt.*; //for import Image
 import java.awt.event.*;
+import java.util.*;
 
 
 /**
@@ -58,7 +59,23 @@ public class Deposit extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
       // TODO Auto-generated method stub
       if(ae.getSource() == deposit){
-
+        String amountToDeposite = amount.getText();
+        Date date = new Date();
+        if(amountToDeposite.equals("")){
+          JOptionPane.showMessageDialog(null, "Please enter the amount you want to deposit");
+        }else{
+          try {
+            DatabaseConnection conn = new DatabaseConnection();
+            String query = "insert into bank values('"+pinnumber+"', '"+date+"', 'Deposit', '"+amountToDeposite+"')";
+            conn.stmt.executeUpdate(query);
+            JOptionPane.showMessageDialog(null, "Rs "+amountToDeposite+" Deposited Successfully"); 
+            setVisible(false);
+            new Transactions(pinnumber).setVisible(true);
+          } catch (Exception e) {
+            System.out.println(e);
+          }
+          
+        }
       }else if(ae.getSource() == back){
         setVisible(false);
         new Transactions(pinnumber).setVisible(true);
