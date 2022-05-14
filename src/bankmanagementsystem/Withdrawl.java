@@ -16,9 +16,9 @@ import java.util.*;
  */
 public class Withdrawl extends JFrame implements ActionListener{
 
-   JTextField amount;
-   JButton withdraw, back;
-   String pinnumber;
+   private JTextField amount;
+   private JButton withdraw, back;
+   private String pinnumber;
 
     public Withdrawl(String pinnumber){
       this.pinnumber = pinnumber;

@@ -13,9 +13,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class PinChange extends JFrame implements ActionListener{
-    JPasswordField pin, repin;
-    JButton change, back;
-    String pinNo;
+    private JPasswordField pin, repin;
+    private JButton change, back;
+    private String pinNo;
     
     public PinChange(String pinNo){
         this.pinNo = pinNo;

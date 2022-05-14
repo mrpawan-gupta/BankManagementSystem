@@ -15,8 +15,8 @@ import java.sql.ResultSet;
 import java.awt.*;
 
 public class BalanceEnquiry extends JFrame implements ActionListener{
-    String pinNo ;
-    JButton back;
+    private String pinNo ;
+    private JButton back;
     
     BalanceEnquiry(String pinNo){
         this.pinNo = pinNo;

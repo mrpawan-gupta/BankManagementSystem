@@ -16,9 +16,9 @@ import java.util.*;
  */
 public class Deposit extends JFrame implements ActionListener{
 
-   JTextField amount;
-   JButton deposit, back;
-   String pinnumber;
+   private JTextField amount;
+   private JButton deposit, back;
+   private String pinnumber;
 
     public Deposit(String pinnumber){
       this.pinnumber = pinnumber;

@@ -15,8 +15,8 @@ import java.sql.*;
 
 public class MiniStatement extends JFrame implements ActionListener{
  
-    JButton b1, b2;
-    JLabel mini;
+    private JButton b1, b2;
+    private JLabel mini;
     MiniStatement(String pin){
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);

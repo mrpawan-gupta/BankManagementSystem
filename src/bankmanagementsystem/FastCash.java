@@ -15,8 +15,9 @@ import java.sql.*; //for resultSet
 import java.util.Date;
 
 public class FastCash extends JFrame implements ActionListener {
-  JButton rs100, rs500, rs1000, rs2000, rs5000, rs10000, back;
-  String pinNo;
+  
+  private JButton rs100, rs500, rs1000, rs2000, rs5000, rs10000, back;
+  private String pinNo;
 
   FastCash(String pinNo) {
     this.pinNo = pinNo;

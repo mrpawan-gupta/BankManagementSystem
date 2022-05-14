@@ -14,10 +14,10 @@ import java.awt.event.*;
 import java.util.*;
 
 public class SignupThree extends JFrame implements ActionListener {
-  JRadioButton radioButton1, radioButton2, radioButton3, radioButton4;
-  JCheckBox checkBox1,checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7;
-  JButton submit, cancel;
-  String formNo;
+  private JRadioButton radioButton1, radioButton2, radioButton3, radioButton4;
+  private JCheckBox checkBox1,checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7;
+  private JButton submit, cancel;
+  private String formNo;
   
   //Constructor
   SignupThree(String formNo){

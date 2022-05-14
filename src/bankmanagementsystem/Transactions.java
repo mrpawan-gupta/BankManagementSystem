@@ -15,8 +15,8 @@ import java.awt.event.*;
 
 
 public class Transactions extends JFrame implements ActionListener{
-    JButton deposit, withdrawl, fastcash, miniStatement, pinChange, balanceInquery, exit; 
-    String pinNo;
+    private JButton deposit, withdrawl, fastcash, miniStatement, pinChange, balanceInquery, exit; 
+    private String pinNo;
     Transactions(String pinNo){
         this.pinNo = pinNo;
         setLayout(null);
