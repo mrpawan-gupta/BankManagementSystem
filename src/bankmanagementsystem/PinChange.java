@@ -93,7 +93,7 @@ public class PinChange extends JFrame implements ActionListener{
                 //There are 3 tables where pin is present so we have to chnage pin in all 
                 String query1 = "update bank set pin = '"+reEnteredPin+"' where pin = '"+pinNo+"'";
                 String query2 = "update login set pinNo = '"+reEnteredPin+"' where pinNo = '"+pinNo+"'";
-                String query3 = "update signupthree set pinNo = '"+reEnteredPin+"' where pinNo = '"+pinNo+"'";
+                String query3 = "update signupThree set pinNo = '"+reEnteredPin+"' where pinNo = '"+pinNo+"'";
                 
                 conn.stmt.executeUpdate(query1);
                 conn.stmt.executeUpdate(query2);
