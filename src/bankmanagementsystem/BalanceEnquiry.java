@@ -34,7 +34,7 @@ public class BalanceEnquiry extends JFrame implements ActionListener{
         back.addActionListener(this);
         image.add(back);
         
-        Conn conn = new Conn();
+        DatabaseConnection conn = new DatabaseConnection();
         int balance = 0;
         try{
             //Check amount is present or not
