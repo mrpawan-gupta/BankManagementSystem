@@ -209,6 +209,17 @@ public class SignupOne extends JFrame implements ActionListener{
           if(name.equals("")){
               JOptionPane.showMessageDialog(null, "Name is Required");
           }
+          else if(email.equals("")){
+            JOptionPane.showMessageDialog(null, "Email is Required");
+          }else if(address.equals("")){
+              JOptionPane.showMessageDialog(null, "Address is Required");
+          }else if(city.equals("")){
+            JOptionPane.showMessageDialog(null, "City is Required");
+          }else if(state.equals("")){
+            JOptionPane.showMessageDialog(null, "State is Required");
+          }else if(pin.equals("")){
+            JOptionPane.showMessageDialog(null, "Pincode is Required");
+          }
           else{
             DatabaseConnection conn = new DatabaseConnection();
             String query = "insert into signup values('"+formNo+"', '"+name+"', '"+fname+"', '"+dob+"', '"+gender+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+pin+"', '"+state+"')";
