@@ -196,8 +196,15 @@ public class SignupTwo extends JFrame implements ActionListener {
         try{
             if(saadhar.equals("")){
                 JOptionPane.showMessageDialog(null, "Aadhar Number is Required");
-            }else if(span.equals("")){
+                return;
+            }
+            else if(saadhar.length() < 12){
+                JOptionPane.showMessageDialog(null, "Please Enter Correct Adhar Number");
+                return;
+            }
+            else if(span.equals("")){
                 JOptionPane.showMessageDialog(null, "Pan Number is Required");
+                return;
             }
             else{
                 DatabaseConnection conn = new DatabaseConnection();
