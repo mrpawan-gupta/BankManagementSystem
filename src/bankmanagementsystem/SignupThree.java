@@ -180,6 +180,8 @@ public class SignupThree extends JFrame implements ActionListener {
               accountType = "Current Account";
           }else if(radioButton4.isSelected()){
               accountType = "Reccuring Deposit Account";
+          }else{
+            JOptionPane.showMessageDialog(null, "Account Type is Required");
           }
           Random random = new Random();
           //Generate card no.
@@ -201,11 +203,16 @@ public class SignupThree extends JFrame implements ActionListener {
           }else if(checkBox6.isSelected()){
               facility += " Cheque Book";
           }
+          if(!checkBox7.isSelected()){
+            JOptionPane.showMessageDialog(null, "Please Sign The Declaration");
+            return;
+          }
           //Give these values to database
           try{
               if(accountType.equals("")){
                   //Show Dialog 
                   JOptionPane.showMessageDialog(null, "Account Type is required");
+                  return;
               }else{
                   DatabaseConnection conn = new DatabaseConnection();
                   String query1 = "insert into signupThree values('"+formNo+"', '"+accountType+"', '"+cardNo+"', '"+pinNo+"', '"+facility+"')";
