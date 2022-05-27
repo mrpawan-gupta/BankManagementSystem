@@ -102,7 +102,7 @@ public class PinChange extends JFrame implements ActionListener{
                 JOptionPane.showMessageDialog(null, "PIN changed successfully");
                 
                 setVisible(false);
-                new Transactions(reEnteredPin).setVisible(true);
+                new BankManagementSystem().setVisible(true);
             }catch(Exception exception){
                 System.out.println(exception);
             }
