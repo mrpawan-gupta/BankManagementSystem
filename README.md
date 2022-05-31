@@ -15,6 +15,7 @@ Technologies used:-
 2. MySQL
 3. Netbeans
 
-Project Vedio/Glance :- 
+Project Vedio/Glance
+
 https://user-images.githubusercontent.com/72335896/171089480-08fee187-51db-4382-bcfd-ea7a44990996.mp4
 
