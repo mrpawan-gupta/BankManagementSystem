@@ -14,4 +14,5 @@ Technologies used:-
 1. JAVA 11
 2. MySQL
 3. Netbeans
+ 
  file:///home/notyourpawan/Desktop/BankManagementSystem/Images_Vedios/Project.mp4
